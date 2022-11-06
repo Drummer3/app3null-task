@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -40,14 +41,18 @@ class DashboardController extends Controller
         $password = $request->password;
         $country = $request->country;
         $birthday = $request->birthday;
-        User::create([
-            'name' => $name,
-            'email' => $email,
-            'password' => $password,
-            'country' => $country,
-            'birthday' => $birthday
-        ]);
-        return redirect()->route('dashboard');
+        try {
+            User::create([
+                'name' => $name,
+                'email' => $email,
+                'password' => $password,
+                'country' => $country,
+                'birthday' => $birthday
+            ]);
+            return redirect()->route('dashboard');
+        } catch (Exception $error) {
+            return redirect('/');
+        }
     }
 
     /**
