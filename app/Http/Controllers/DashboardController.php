@@ -35,13 +35,13 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        $username = $request->username;
+        $name = $request->name;
         $email = $request->email;
         $password = $request->password;
         $country = $request->country;
         $birthday = $request->birthday;
         User::create([
-            'username' => $username,
+            'name' => $name,
             'email' => $email,
             'password' => $password,
             'country' => $country,
