@@ -34,3 +34,38 @@
         from-[#58af9b]
         to-[#179570];
 }
+
+.table-header {
+    @apply flex w-full lg:gap-4 rounded-md overflow-hidden;
+}
+
+.table-header > div {
+    @apply bg-[#58AF9B] text-white p-4 lg:rounded-md flex-1;
+}
+.content-start,
+.content-center,
+.content-end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-start {
+    justify-content: start;
+}
+
+.content-center {
+    justify-content: center;
+}
+
+.content-end {
+    justify-content: end;
+}
+
+.table-row__container {
+    @apply bg-[#E1F8F6] p-4 flex rounded-md;
+}
+
+.table-row__container > div {
+    @apply flex-1;
+}
