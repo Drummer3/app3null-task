@@ -1,4 +1,5 @@
 <form action="/user" method="POST" class="w-[330px] mt-[24px]">
+    @csrf
     <x-input name="username" type="text" placeholder="Username" />
     <x-input name="email" type="email" placeholder="Email" />
     <x-input name="password" type="password" placeholder="Password" />
